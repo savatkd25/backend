@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Validator;
-  
+use Illuminate\Support\Facades\Auth;
   
 class AuthController extends Controller
 {
@@ -46,8 +46,14 @@ class AuthController extends Controller
     public function login()
     {
         $credentials = request(['email', 'password']);
+
+        if (! $token = Auth::attempt($credentials)){
+
+       // if (! $token = auth()->attempt($credentials)) {
+
         if (! $token = JWTAuth::attempt($credentials)) {
         if (! $token = auth()->attempt($credentials)) {
+
             return response()->json(['error' => 'Unauthorized'], 401);
         }
   

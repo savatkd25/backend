@@ -10,6 +10,10 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "php-open-source-saver/jwt-auth": "^2.3"
+        "laravel/framework": "^11.0",
+        "laravel/tinker": "dev-develop",
+        "php-open-source-saver/jwt-auth": "2.7",
+        "tymon/jwt-auth": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
